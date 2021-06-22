@@ -15,7 +15,7 @@ Object detection libraries are everywhere, and you can find python, web, and oth
 ## Demo
 View demo on [Glitch](https://glitch.com/edit/#!/field-inexpensive-fright)
 
-##Installation
+## Installation
 
 ### Clone this repo
 
