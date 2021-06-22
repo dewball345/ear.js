@@ -6,6 +6,9 @@ export async function tfNms(
     iou_thresh=0.45,
     max_det = 300
 ){
+
+    
+
     const MODEL_INPUT_IMAGE_SIZE = 640;
 
     let pred = await prediction.array()
@@ -17,6 +20,11 @@ export async function tfNms(
         let xc = predArr.filter((item) => {
             return item[4] > conf_thresh
         })
+        
+        if(xc.length == 0){
+            console.log(`No prediction with confidence > ${conf_thresh} was found!`)
+            return [];
+        }
         
         xc.forEach(item => {
             item[0] *= MODEL_INPUT_IMAGE_SIZE
