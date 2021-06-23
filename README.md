@@ -16,7 +16,7 @@ On a relatively high end PC performance was about 12 fps, so I am not sure how r
 
 ## Demo
 * Demo with code on [Glitch](https://glitch.com/edit/#!/field-inexpensive-fright)
-* Web demo found [here](dewball345.github.io/ear.js/)
+* Web demo found [here](https://dewball345.github.io/ear.js/)
 
 ## Installation
 
