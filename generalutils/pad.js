@@ -29,7 +29,7 @@ export function padImage(img, w, h){
 }
 
 export function resizePad(item, pad_amt, useW){
-    console.log(JSON.stringify(item))
+    // console.log(JSON.stringify(item))
     if(useW){
         item[1] += pad_amt
         item[3] += pad_amt

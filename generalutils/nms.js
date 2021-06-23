@@ -60,8 +60,8 @@ export async function tfNms(
             scores.push(conf[i])
         }
 
-        console.log("TF NMSASYNC FUNC")
-        console.log(boxes, scores)
+        // console.log("TF NMSASYNC FUNC")
+        // console.log(boxes, scores)
 
         let i = await tf.image.nonMaxSuppressionAsync(
             boxes, scores, max_det, iou_thresh

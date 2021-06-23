@@ -28,10 +28,10 @@ export class EarModel{
     async pred(/*canvas, ctx,*/ imgElem){
         let im0s = tf.browser.fromPixels(imgElem)
         let img = im0s.div(tf.scalar(255.0))
-        console.log(im0s.shape)
+        // console.log(im0s.shape)
         let pad_spec = await GeneralUtils.padImage(img, 640, 640)
         img = pad_spec.pd
-        console.log(img.shape)
+        // console.log(img.shape)
         // await tf.browser.toPixels(im0s, canvas);
     
         let prediction = await this.model.predict(img.expandDims(0))
