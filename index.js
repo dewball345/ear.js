@@ -7,7 +7,6 @@ var img = document.getElementById("img");
 var status = document.getElementById("status");
 
 
-
 async function main(){
     let im0s = tf.browser.fromPixels(img)
     await tf.browser.toPixels(im0s, canvas);
@@ -16,10 +15,10 @@ async function main(){
     status.innerText = "Loading model"
     await em.loadModel()
 
-    async function doInference(){
+    async function doInference(doPost){
         
         tf.engine().startScope()
-        let prediction = await em.pred(canvas, ctx, img);
+        let prediction = await em.pred(/*canvas, ctx, */img, doPost);
         tf.engine().endScope()
         return prediction
     }
@@ -38,10 +37,10 @@ async function main(){
     btn.onclick = async () => {
         let fpsAmt = 0
         let length = 50;
-        status.innerText = "Running FPS Test..."
+        status.innerText = "Running FPS Test(Without postprocessing)..."
         for(let i = 0; i<length; i++){
             const START = window.performance.now()
-            await doInference()
+            await doInference(false)
             const END = window.performance.now()
             fpsAmt += END-START
         }

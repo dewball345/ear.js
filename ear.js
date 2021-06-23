@@ -24,8 +24,8 @@ export class EarModel{
         console.log("finished loading")
         this.model = model
     }
-
-    async pred(/*canvas, ctx,*/ imgElem){
+    
+    async pred(/*canvas, ctx,*/ imgElem, doPost=true){
         let im0s = tf.browser.fromPixels(imgElem)
         let img = im0s.div(tf.scalar(255.0))
         // console.log(im0s.shape)
@@ -39,31 +39,33 @@ export class EarModel{
         
         let outputDets = []
 
-        for(let det of processed){
-            det = [det]
-            for(let dt of det){
-                let scaled = await GeneralUtils.tfScaleCoords(
-                    img.shape.slice(0, 2),
-                    [dt.slice(0, 4)],
-                    im0s.shape.slice(0, 2),
-                    pad_spec.padm,
-                    pad_spec.mode
-                )
+        if(doPost){
+            for(let det of processed){
+                det = [det]
+                for(let dt of det){
+                    let scaled = await GeneralUtils.tfScaleCoords(
+                        img.shape.slice(0, 2),
+                        [dt.slice(0, 4)],
+                        im0s.shape.slice(0, 2),
+                        pad_spec.padm,
+                        pad_spec.mode
+                    )
 
-                scaled = scaled[0]
-                dt[0] = scaled[0]
-                dt[1] = scaled[1]
-                dt[2] = scaled[2]
-                dt[3] = scaled[3]
+                    scaled = scaled[0]
+                    dt[0] = scaled[0]
+                    dt[1] = scaled[1]
+                    dt[2] = scaled[2]
+                    dt[3] = scaled[3]
+                }
+
+                det = GeneralUtils.xyxy2xywh(det)[0]
+                det = GeneralUtils.oneHalfShift(det)
+                
+                outputDets.push(det)
+                // GeneralUtils.drawToCanvas(det, ctx)    
             }
 
-            det = GeneralUtils.xyxy2xywh(det)[0]
-            det = GeneralUtils.oneHalfShift(det)
-            
-            outputDets.push(det)
-            // GeneralUtils.drawToCanvas(det, ctx)    
+            return outputDets
         }
-
-        return outputDets
     }
 }
