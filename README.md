@@ -13,8 +13,9 @@ Object detection libraries are everywhere, and you can find python, web, and oth
 
 ## Realtime?
 * On a relatively high end PC performance was about 15 fps. 
-* On a mid-tier mobile the model took a long time to load and inference speed was only 3 fps
-* On a low-tier mobile i couldn't even load the model(had to use no-throttling to load the model) and the inference speed was 2 fps
+* On literally any other device the performance was a bout 3 fps.
+
+So no, this is not realtime.
 
 Please test your fps on your device using the web demo. 
 ## Demo
