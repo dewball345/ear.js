@@ -12,8 +12,11 @@ Object detection libraries are everywhere, and you can find python, web, and oth
 3. Ear.js is very flexible; it only gives you what you need to have(the final inference data), and from that you can use it in many ways
 
 ## Realtime?
-On a relatively high end PC performance was about 15 fps. Please test your fps on your device using the web demo. 
+* On a relatively high end PC performance was about 15 fps. 
+* On a mid-tier mobile the model took a long time to load and inference speed was only 3 fps
+* On a low-tier mobile I wasn't even able to get my results because of how slow it was
 
+Please test your fps on your device using the web demo. 
 ## Demo
 * Demo with code on [Glitch](https://glitch.com/edit/#!/field-inexpensive-fright)
 * Web demo found [here](https://dewball345.github.io/ear.js/)
