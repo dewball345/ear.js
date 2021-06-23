@@ -9,8 +9,10 @@ Object detection libraries are everywhere, and you can find python, web, and oth
 
 ## Features
 1. Ear.js is easy to implement in your code, with prebuilt classes for preprocessing, postprocessing, and drawing results to canvas.
-2. It is realtime at about 12 fps
 3. Ear.js is very flexible; it only gives you what you need to have(the final inference data), and from that you can use it in many ways
+
+## Realtime?
+On a relatively high end PC performance was about 12 fps, so I am not sure how realtime it is exactly. Further testing will be done and this notice will be updated.
 
 ## Demo
 * Demo with code on [Glitch](https://glitch.com/edit/#!/field-inexpensive-fright)
