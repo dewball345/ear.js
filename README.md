@@ -5,7 +5,7 @@
 
 This project was started by dewball345
 
-Object detection libraries are everywhere, and you can find python, web, and other implementations of them. But I have yet to find a comprehensive object detection for ear detection, let alone one that is real-time and in the web. So I created ear.js, a javascript library for real-time ear object detection. 
+Object detection libraries are everywhere, and you can find python, web, and other implementations of them. But I have yet to find a comprehensive object detection for ear detection, let alone one that can do inference in the web. So I created ear.js, a javascript library for real-time ear object detection. 
 
 ## Features
 1. Ear.js is easy to implement in your code, with prebuilt classes for preprocessing, postprocessing, and drawing results to canvas.
